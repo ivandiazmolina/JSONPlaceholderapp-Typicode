@@ -1,0 +1,31 @@
+PODS:
+  - IDIAZM (0.0.3)
+  - NVActivityIndicatorView/Base (5.1.1)
+  - NVActivityIndicatorView/Extended (5.1.1):
+    - NVActivityIndicatorView/Base
+
+DEPENDENCIES:
+  - IDIAZM (from `https://github.com/ivandiazmolina/IDIAZM-library`, branch `develop`)
+  - NVActivityIndicatorView/Extended
+
+SPEC REPOS:
+  trunk:
+    - NVActivityIndicatorView
+
+EXTERNAL SOURCES:
+  IDIAZM:
+    :branch: develop
+    :git: https://github.com/ivandiazmolina/IDIAZM-library
+
+CHECKOUT OPTIONS:
+  IDIAZM:
+    :commit: c0f89ac849ad0214be7e881f7bb252e71b10730b
+    :git: https://github.com/ivandiazmolina/IDIAZM-library
+
+SPEC CHECKSUMS:
+  IDIAZM: f86852c791db59646355dde4d814731035be6cf3
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+
+PODFILE CHECKSUM: eb38f21e8947dba7a9143dea87f6ccc3fd00a782
+
+COCOAPODS: 1.9.3
