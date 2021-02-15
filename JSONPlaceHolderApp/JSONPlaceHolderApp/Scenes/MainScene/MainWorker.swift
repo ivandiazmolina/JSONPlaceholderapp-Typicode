@@ -17,12 +17,45 @@ class MainWorker {
     func getPosts(completion: @escaping([Post]?, String?) -> Void) {
         
         // LETS and VARS
-        let repository = PostRepository()
+        var mPosts: [Post]?
+        var mUsers: [User]?
+        
+        let dispatchGroup = DispatchGroup()
+        
+        let postRepository = PostRepository()
+        let userRepository = UserRepository()
         
         // Get Posts
-        repository.getPosts { (posts) in
+        dispatchGroup.enter()
+        postRepository.getPosts() { posts in
             print(posts)
-            completion(posts, nil)
+            mPosts = posts
+            dispatchGroup.leave()
         }
+        
+        // Get Users
+        dispatchGroup.enter()
+        userRepository.getUsers() { users in
+            print(users)
+            mUsers = users
+            dispatchGroup.leave()
+        }
+        
+        // DispatchGroup
+        dispatchGroup.notify(queue: .main) {
+            
+            for (index,post) in mPosts?.enumerated() ?? [].enumerated() {
+                
+                if let user = self.findUserBy(users: mUsers, userId: post.getUserId()) {
+                    mPosts?[index].user = user
+                }
+            }
+            
+            completion(mPosts, nil)
+        }
+    }
+    
+    fileprivate func findUserBy(users: [User]?, userId: Int) -> User? {
+        return users?.first(where: {$0.id == userId})
     }
 }

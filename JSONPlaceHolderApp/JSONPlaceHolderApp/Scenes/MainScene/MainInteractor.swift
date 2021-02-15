@@ -41,7 +41,7 @@ class MainInteractor: MainBusinessLogic, MainDataStore {
         let response = Main.SetupView.Response()
         presenter?.setupView(response: response)
         
-        getPosts()
+        getInitialData()
     }
     
     func didSelectedItemAt(index: Int) {
@@ -60,7 +60,7 @@ class MainInteractor: MainBusinessLogic, MainDataStore {
         return Main.Models.PostCellModel(post: post)
     }
     
-    fileprivate func getPosts() {
+    fileprivate func getInitialData() {
         
         presenter?.displayLoading(true)
         

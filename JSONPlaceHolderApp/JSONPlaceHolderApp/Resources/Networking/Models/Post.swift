@@ -9,16 +9,18 @@
 import Foundation
 
 struct Post: Codable {
-    var userId: Int?
+    var user: User?
     var id: Int?
     var title: String?
     var body: String?
+    private var userId: Int?
     
     init() {
-        userId = -1
+        user = User()
         id = -1
         title = ""
         body = ""
+        userId = -1
     }
     
     init(_ data: Data) throws {
@@ -30,5 +32,13 @@ struct Post: Codable {
             throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
         }
         try self.init(data)
+    }
+    
+    func getUserId() -> Int {
+        return userId ?? -1
+    }
+    
+    mutating func setUser(user: User) {
+        self.user = user
     }
 }

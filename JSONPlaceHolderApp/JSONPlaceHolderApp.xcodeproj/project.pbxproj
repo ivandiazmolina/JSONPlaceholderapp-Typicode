@@ -33,6 +33,10 @@
 		2CFA5ED125DAF4360009C915 /* PostsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA5ED025DAF4360009C915 /* PostsManager.swift */; };
 		2CFA5ED825DB1FC30009C915 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA5ED625DB1FC30009C915 /* PostTableViewCell.swift */; };
 		2CFA5ED925DB1FC30009C915 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CFA5ED725DB1FC30009C915 /* PostTableViewCell.xib */; };
+		2CFA5EE525DB27050009C915 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA5EE425DB27050009C915 /* UserRepository.swift */; };
+		2CFA5EEA25DB271C0009C915 /* LocalUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA5EE925DB271C0009C915 /* LocalUserRepository.swift */; };
+		2CFA5EEF25DB272B0009C915 /* APIUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA5EEE25DB272B0009C915 /* APIUserRepository.swift */; };
+		2CFA5EF425DB27A70009C915 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA5EF325DB27A70009C915 /* UserManager.swift */; };
 		B23B31CA4F2CA3399638E2FA /* Pods_JSONPlaceHolderApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E484FB19342CC8710D45E6B0 /* Pods_JSONPlaceHolderApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +89,10 @@
 		2CFA5ED025DAF4360009C915 /* PostsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsManager.swift; sourceTree = "<group>"; };
 		2CFA5ED625DB1FC30009C915 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		2CFA5ED725DB1FC30009C915 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		2CFA5EE425DB27050009C915 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		2CFA5EE925DB271C0009C915 /* LocalUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUserRepository.swift; sourceTree = "<group>"; };
+		2CFA5EEE25DB272B0009C915 /* APIUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUserRepository.swift; sourceTree = "<group>"; };
+		2CFA5EF325DB27A70009C915 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		4690D6DB9B407DDC1ECC7C34 /* Pods-JSONPlaceHolderAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONPlaceHolderAppTests.debug.xcconfig"; path = "Target Support Files/Pods-JSONPlaceHolderAppTests/Pods-JSONPlaceHolderAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		548C3682977508EE12D9FE99 /* Pods-JSONPlaceHolderApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONPlaceHolderApp.debug.xcconfig"; path = "Target Support Files/Pods-JSONPlaceHolderApp/Pods-JSONPlaceHolderApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5B5A56504600E7027B7A151B /* Pods-JSONPlaceHolderApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONPlaceHolderApp.release.xcconfig"; path = "Target Support Files/Pods-JSONPlaceHolderApp/Pods-JSONPlaceHolderApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,6 +248,7 @@
 			children = (
 				2CFA5EB825DAF0220009C915 /* APIBaseRepository.swift */,
 				2CFA5EB725DAEFEB0009C915 /* Post */,
+				2CFA5EE325DB26F50009C915 /* User */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -258,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				2CFA5ED025DAF4360009C915 /* PostsManager.swift */,
+				2CFA5EF325DB27A70009C915 /* UserManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -269,6 +279,16 @@
 				2CFA5ED725DB1FC30009C915 /* PostTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2CFA5EE325DB26F50009C915 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2CFA5EE425DB27050009C915 /* UserRepository.swift */,
+				2CFA5EEE25DB272B0009C915 /* APIUserRepository.swift */,
+				2CFA5EE925DB271C0009C915 /* LocalUserRepository.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		80250912A72BA5656CC7B936 /* Frameworks */ = {
@@ -511,6 +531,7 @@
 			files = (
 				2CD0CE0725DAE6E400FCE33F /* MainViewController.swift in Sources */,
 				2CD0CE0525DAE6E400FCE33F /* MainRouter.swift in Sources */,
+				2CFA5EEA25DB271C0009C915 /* LocalUserRepository.swift in Sources */,
 				2CFA5ED825DB1FC30009C915 /* PostTableViewCell.swift in Sources */,
 				2CD0CDAA25DADDC900FCE33F /* AppDelegate.swift in Sources */,
 				2CFA5EBE25DAF0BB0009C915 /* PostRepository.swift in Sources */,
@@ -519,6 +540,7 @@
 				2CD0CE0325DAE6E400FCE33F /* MainPresenter.swift in Sources */,
 				2CFA5EB925DAF0220009C915 /* APIBaseRepository.swift in Sources */,
 				2CD0CE1A25DAE81A00FCE33F /* BaseViewController.swift in Sources */,
+				2CFA5EEF25DB272B0009C915 /* APIUserRepository.swift in Sources */,
 				2CD0CE0425DAE6E400FCE33F /* MainWorker.swift in Sources */,
 				2CFA5EAF25DAED540009C915 /* Comment.swift in Sources */,
 				2CFA5EC625DAF0F00009C915 /* APIPostRepository.swift in Sources */,
@@ -526,6 +548,8 @@
 				2CD0CE0825DAE6E400FCE33F /* MainInteractor.swift in Sources */,
 				2CFA5ED125DAF4360009C915 /* PostsManager.swift in Sources */,
 				2CFA5EA525DAED1C0009C915 /* Post.swift in Sources */,
+				2CFA5EE525DB27050009C915 /* UserRepository.swift in Sources */,
+				2CFA5EF425DB27A70009C915 /* UserManager.swift in Sources */,
 				2CFA5EAA25DAED3B0009C915 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

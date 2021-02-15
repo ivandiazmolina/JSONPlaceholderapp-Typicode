@@ -8,26 +8,16 @@
 
 import Foundation
 
-// Enum to know operation result.
-//
-// - success: Operation finish without error
-// - failure: Operation finish with error
-enum APIRequestResult<T> {
-    case success(result: T)
-    case failure(error: String)
-}
-
-
 enum APIEndpoint {
     case posts
-//    case characters(serieID: Int)
-//    case details(characterID: Int)
-    
+    case users
     
     var url: String {
         switch self {
         case .posts:
             return "/posts"
+        case .users:
+            return "/users"
         }
     }
 }

@@ -12,6 +12,7 @@ class PostTableViewCell: UITableViewCell {
 
     // MARK: IBOutlets
     @IBOutlet weak var postLabel: UILabel!
+    @IBOutlet weak var userLabel: UILabel!
     
     // MARK: LETS and VARS
     private var post: Post?
@@ -28,9 +29,14 @@ class PostTableViewCell: UITableViewCell {
         
         post = model.post
         
-        // Label
+        // Post
         postLabel.text = post?.title
         postLabel.textColor = .black
         postLabel.font = .boldSystemFont(ofSize: 16)
+        
+        // User
+        userLabel.text = String(format:"%@ @%@", "posts.postedBy".localized, post?.user?.username ?? "-")
+        userLabel.textColor = .lightGray
+        userLabel.font = .boldSystemFont(ofSize: 12)
     }
 }
