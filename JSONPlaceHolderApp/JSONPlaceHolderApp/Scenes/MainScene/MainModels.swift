@@ -26,11 +26,21 @@ enum Main {
         }
     }
     
-    enum getPosts {
+    enum GetPosts {
         struct Request {
         }
         struct Response {
             var posts: [Post]?
+        }
+        struct ViewModel {
+        }
+    }
+    
+    enum DidSelectedItem {
+        struct Request {
+        }
+        struct Response {
+            var post: Post?
         }
         struct ViewModel {
         }

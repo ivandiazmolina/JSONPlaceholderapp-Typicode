@@ -11,6 +11,7 @@ import Foundation
 enum APIEndpoint {
     case posts
     case users
+    case comments(postId: Int)
     
     var url: String {
         switch self {
@@ -18,6 +19,8 @@ enum APIEndpoint {
             return "/posts"
         case .users:
             return "/users"
+        case .comments(let postId):
+            return "/comments/?\(postId)"
         }
     }
 }

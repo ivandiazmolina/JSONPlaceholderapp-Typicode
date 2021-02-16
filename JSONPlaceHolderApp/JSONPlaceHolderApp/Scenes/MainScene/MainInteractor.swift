@@ -15,15 +15,15 @@ import UIKit
 protocol MainBusinessLogic {
     func setupView()
     
-    func didSelectedItemAt(index: Int)
-    
     // MARK: Posts
+    func didSelectedItemAt(index: Int)
     func getPostsCount() -> Int
     func getPostCellFor(index: Int) -> Main.Models.PostCellModel
 }
 
 protocol MainDataStore {
     var posts: [Post]? { get set }
+    var selectedPost: Post? { get set }
 }
 
 class MainInteractor: MainBusinessLogic, MainDataStore {
@@ -31,6 +31,7 @@ class MainInteractor: MainBusinessLogic, MainDataStore {
     var presenter: MainPresentationLogic?
     var worker: MainWorker?
     var posts: [Post]?
+    var selectedPost: Post?
     
     // MARK: Business Logic
     
@@ -47,7 +48,11 @@ class MainInteractor: MainBusinessLogic, MainDataStore {
     func didSelectedItemAt(index: Int) {
         guard let post = posts?.getElement(index) else { return }
         
-        print(post)
+        selectedPost = post
+        
+        let response = Main.DidSelectedItem.Response(post: selectedPost)
+        
+        presenter?.presentPostDetails(response: response)
     }
     
     func getPostsCount() -> Int {

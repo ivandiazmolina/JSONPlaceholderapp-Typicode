@@ -16,7 +16,8 @@ import IDIAZM
 protocol MainDisplayLogic: class {
     func setupView(viewModel: Main.SetupView.ViewModel)
     func showLoading(_ show: Bool)
-    func presentPost()
+    func displayPosts()
+    func displayPostDetails(viewModel: Main.DidSelectedItem.ViewModel)
 }
 
 class MainViewController: BaseViewController, MainDisplayLogic {
@@ -94,8 +95,12 @@ class MainViewController: BaseViewController, MainDisplayLogic {
         displayLoading(show)
     }
     
-    func presentPost() {
+    func displayPosts() {
         reloadData(tableView: postTableView)
+    }
+    
+    func displayPostDetails(viewModel: Main.DidSelectedItem.ViewModel) {        
+        router?.routerToPostDetails(segue: nil)
     }
 }
 
@@ -123,5 +128,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.updateUI(model: data)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        interactor?.didSelectedItemAt(index: indexPath.row)
     }
 }

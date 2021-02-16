@@ -16,6 +16,7 @@ protocol MainPresentationLogic {
     func setupView(response: Main.SetupView.Response)
     func displayLoading(_ show: Bool)
     func presentPosts()
+    func presentPostDetails(response: Main.DidSelectedItem.Response)
 }
 
 class MainPresenter: MainPresentationLogic {
@@ -35,7 +36,14 @@ class MainPresenter: MainPresentationLogic {
     }
     
     func presentPosts() {
-        viewController?.presentPost()
+        viewController?.displayPosts()
     }
     
+    func presentPostDetails(response: Main.DidSelectedItem.Response) {
+        // 1. create viewModel
+        let viewModel = Main.DidSelectedItem.ViewModel()
+        
+        // 2. display data
+        viewController?.displayPostDetails(viewModel: viewModel)
+    }
 }

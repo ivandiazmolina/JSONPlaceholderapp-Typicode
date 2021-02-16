@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		250DB658668A1FF85D52487D /* Pods_JSONPlaceHolderAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D10C5E4E3C50B04909D9B5 /* Pods_JSONPlaceHolderAppTests.framework */; };
+		2C85CFA325DB369C008D4F0C /* APICommentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CFA225DB369C008D4F0C /* APICommentRepository.swift */; };
+		2C85CFA825DB36B7008D4F0C /* CommentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CFA725DB36B7008D4F0C /* CommentRepository.swift */; };
+		2C85CFB625DB39F9008D4F0C /* PostDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CFB025DB39F9008D4F0C /* PostDetailsPresenter.swift */; };
+		2C85CFB725DB39F9008D4F0C /* PostDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CFB125DB39F9008D4F0C /* PostDetailsWorker.swift */; };
+		2C85CFB825DB39F9008D4F0C /* PostDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CFB225DB39F9008D4F0C /* PostDetailsRouter.swift */; };
+		2C85CFB925DB39F9008D4F0C /* PostDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CFB325DB39F9008D4F0C /* PostDetailsModels.swift */; };
+		2C85CFBA25DB39F9008D4F0C /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CFB425DB39F9008D4F0C /* PostDetailsViewController.swift */; };
+		2C85CFBB25DB39F9008D4F0C /* PostDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CFB525DB39F9008D4F0C /* PostDetailsInteractor.swift */; };
+		2C85CFC025DB3A9D008D4F0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C85CFBF25DB3A9D008D4F0C /* Constants.swift */; };
+		2C85CFC625DB3B08008D4F0C /* PostDetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C85CFC525DB3B08008D4F0C /* PostDetailsStoryboard.storyboard */; };
 		2CD0CDAA25DADDC900FCE33F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0CDA925DADDC900FCE33F /* AppDelegate.swift */; };
 		2CD0CDAC25DADDC900FCE33F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0CDAB25DADDC900FCE33F /* SceneDelegate.swift */; };
 		2CD0CDB325DADDCA00FCE33F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0CDB225DADDCA00FCE33F /* Assets.xcassets */; };
@@ -58,6 +68,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C85CFA225DB369C008D4F0C /* APICommentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICommentRepository.swift; sourceTree = "<group>"; };
+		2C85CFA725DB36B7008D4F0C /* CommentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRepository.swift; sourceTree = "<group>"; };
+		2C85CFB025DB39F9008D4F0C /* PostDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsPresenter.swift; sourceTree = "<group>"; };
+		2C85CFB125DB39F9008D4F0C /* PostDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsWorker.swift; sourceTree = "<group>"; };
+		2C85CFB225DB39F9008D4F0C /* PostDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsRouter.swift; sourceTree = "<group>"; };
+		2C85CFB325DB39F9008D4F0C /* PostDetailsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsModels.swift; sourceTree = "<group>"; };
+		2C85CFB425DB39F9008D4F0C /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		2C85CFB525DB39F9008D4F0C /* PostDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsInteractor.swift; sourceTree = "<group>"; };
+		2C85CFBF25DB3A9D008D4F0C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2C85CFC525DB3B08008D4F0C /* PostDetailsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostDetailsStoryboard.storyboard; sourceTree = "<group>"; };
 		2CD0CDA625DADDC900FCE33F /* JSONPlaceHolderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONPlaceHolderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD0CDA925DADDC900FCE33F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CD0CDAB25DADDC900FCE33F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +148,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C85CFA125DB3673008D4F0C /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				2C85CFA725DB36B7008D4F0C /* CommentRepository.swift */,
+				2C85CFA225DB369C008D4F0C /* APICommentRepository.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		2C85CFAF25DB39E4008D4F0C /* PostDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2C85CFB025DB39F9008D4F0C /* PostDetailsPresenter.swift */,
+				2C85CFB125DB39F9008D4F0C /* PostDetailsWorker.swift */,
+				2C85CFB225DB39F9008D4F0C /* PostDetailsRouter.swift */,
+				2C85CFB325DB39F9008D4F0C /* PostDetailsModels.swift */,
+				2C85CFB425DB39F9008D4F0C /* PostDetailsViewController.swift */,
+				2C85CFB525DB39F9008D4F0C /* PostDetailsInteractor.swift */,
+				2C85CFC525DB3B08008D4F0C /* PostDetailsStoryboard.storyboard */,
+			);
+			path = PostDetails;
+			sourceTree = "<group>";
+		};
 		2CD0CD9D25DADDC900FCE33F = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +230,7 @@
 			children = (
 				2CD0CE1925DAE81A00FCE33F /* BaseViewController.swift */,
 				2CD0CE0D25DAE6F100FCE33F /* MainScene */,
+				2C85CFAF25DB39E4008D4F0C /* PostDetails */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -213,6 +257,7 @@
 				2CFA5EB625DAEFD60009C915 /* Repositories */,
 				2CFA5EA225DAECD80009C915 /* Networking */,
 				2CD0CE2225DAEA3700FCE33F /* Localizables */,
+				2C85CFBF25DB3A9D008D4F0C /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -249,6 +294,7 @@
 				2CFA5EB825DAF0220009C915 /* APIBaseRepository.swift */,
 				2CFA5EB725DAEFEB0009C915 /* Post */,
 				2CFA5EE325DB26F50009C915 /* User */,
+				2C85CFA125DB3673008D4F0C /* Comments */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -421,6 +467,7 @@
 			files = (
 				2CD0CE1525DAE71100FCE33F /* MainStoryboard.storyboard in Resources */,
 				2CFA5ED925DB1FC30009C915 /* PostTableViewCell.xib in Resources */,
+				2C85CFC625DB3B08008D4F0C /* PostDetailsStoryboard.storyboard in Resources */,
 				2CD0CE2425DAEA5800FCE33F /* Localizable.strings in Resources */,
 				2CD0CDB625DADDCA00FCE33F /* LaunchScreen.storyboard in Resources */,
 				2CD0CDB325DADDCA00FCE33F /* Assets.xcassets in Resources */,
@@ -533,9 +580,16 @@
 				2CD0CE0525DAE6E400FCE33F /* MainRouter.swift in Sources */,
 				2CFA5EEA25DB271C0009C915 /* LocalUserRepository.swift in Sources */,
 				2CFA5ED825DB1FC30009C915 /* PostTableViewCell.swift in Sources */,
+				2C85CFB725DB39F9008D4F0C /* PostDetailsWorker.swift in Sources */,
+				2C85CFBA25DB39F9008D4F0C /* PostDetailsViewController.swift in Sources */,
 				2CD0CDAA25DADDC900FCE33F /* AppDelegate.swift in Sources */,
+				2C85CFA825DB36B7008D4F0C /* CommentRepository.swift in Sources */,
 				2CFA5EBE25DAF0BB0009C915 /* PostRepository.swift in Sources */,
+				2C85CFC025DB3A9D008D4F0C /* Constants.swift in Sources */,
+				2C85CFBB25DB39F9008D4F0C /* PostDetailsInteractor.swift in Sources */,
 				2CD0CE0625DAE6E400FCE33F /* MainModels.swift in Sources */,
+				2C85CFB625DB39F9008D4F0C /* PostDetailsPresenter.swift in Sources */,
+				2C85CFB925DB39F9008D4F0C /* PostDetailsModels.swift in Sources */,
 				2CFA5ECB25DAF1AC0009C915 /* LocalPostRepository.swift in Sources */,
 				2CD0CE0325DAE6E400FCE33F /* MainPresenter.swift in Sources */,
 				2CFA5EB925DAF0220009C915 /* APIBaseRepository.swift in Sources */,
@@ -547,8 +601,10 @@
 				2CD0CDAC25DADDC900FCE33F /* SceneDelegate.swift in Sources */,
 				2CD0CE0825DAE6E400FCE33F /* MainInteractor.swift in Sources */,
 				2CFA5ED125DAF4360009C915 /* PostsManager.swift in Sources */,
+				2C85CFB825DB39F9008D4F0C /* PostDetailsRouter.swift in Sources */,
 				2CFA5EA525DAED1C0009C915 /* Post.swift in Sources */,
 				2CFA5EE525DB27050009C915 /* UserRepository.swift in Sources */,
+				2C85CFA325DB369C008D4F0C /* APICommentRepository.swift in Sources */,
 				2CFA5EF425DB27A70009C915 /* UserManager.swift in Sources */,
 				2CFA5EAA25DAED3B0009C915 /* User.swift in Sources */,
 			);

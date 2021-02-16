@@ -11,9 +11,10 @@
 //
 
 import UIKit
+import IDIAZM
 
 @objc protocol MainRoutingLogic {
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routerToPostDetails(segue: UIStoryboardSegue?)
 }
 
 protocol MainDataPassing {
@@ -26,4 +27,31 @@ class MainRouter: NSObject, MainRoutingLogic, MainDataPassing {
     var dataStore: MainDataStore?
     
     // MARK: Routing
+    
+    func routerToPostDetails(segue: UIStoryboardSegue?) {
+        let storyboard = UIStoryboard(name: Constants.Storyboard.postDetails, bundle: nil)
+        
+        if let segue = segue, let destinationVC = segue.destination as? PostDetailsViewController {
+            var destinationDS = destinationVC.router?.dataStore
+            passDataToCharacters(source: dataStore, destination: &destinationDS)
+        } else if let destinationVC = storyboard.instantiateInitialViewController() as? PostDetailsViewController {
+            var destinationDS = destinationVC.router?.dataStore
+            passDataToCharacters(source: dataStore, destination: &destinationDS)
+            navigateToComments(source: viewController!, destination: destinationVC)
+        }
+    }
+    
+    // MARK: Navigation
+    
+    fileprivate func navigateToComments(source: MainViewController, destination: PostDetailsViewController) {
+        ui {
+            source.navigationController?.pushViewController(destination, animated: true)
+        }
+    }
+    
+    // MARK: Passing data
+    
+    fileprivate func passDataToCharacters(source: MainDataStore?, destination: inout PostDetailsDataStore?) {
+        destination?.selectedPost = source?.selectedPost
+    }
 }
