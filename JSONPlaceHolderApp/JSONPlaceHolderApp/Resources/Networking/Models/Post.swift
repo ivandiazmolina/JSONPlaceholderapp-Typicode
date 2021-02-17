@@ -10,6 +10,7 @@ import Foundation
 
 struct Post: Codable {
     var user: User?
+    var comments: [Comment]?
     var id: Int?
     var title: String?
     var body: String?
@@ -38,7 +39,7 @@ struct Post: Codable {
         return userId ?? -1
     }
     
-    mutating func setUser(user: User) {
-        self.user = user
+    mutating func setComments(comments: [Comment]) {
+        self.comments = comments
     }
 }

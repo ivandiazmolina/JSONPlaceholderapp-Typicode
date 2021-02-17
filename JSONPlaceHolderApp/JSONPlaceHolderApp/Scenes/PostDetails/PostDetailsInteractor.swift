@@ -14,6 +14,10 @@ import UIKit
 
 protocol PostDetailsBusinessLogic {
     func setupView()
+    
+    // MARK: Comments
+    func getCommentsCount() -> Int
+    func getCommentCellFor(index: Int) -> PostDetails.Models.CommentCellModel
 }
 
 protocol PostDetailsDataStore {
@@ -25,12 +29,46 @@ class PostDetailsInteractor: PostDetailsBusinessLogic, PostDetailsDataStore {
     var presenter: PostDetailsPresentationLogic?
     var worker: PostDetailsWorker?
     var selectedPost: Post?
+    var comments: [Comment]?
     
     // MARK: BusinessLogic
     
     func setupView() {
         
+        worker = PostDetailsWorker()
+        
         let response = PostDetails.SetupView.Response(post: selectedPost)
         presenter?.setupView(response: response)
+        
+        getComments()
+    }
+    
+    func getCommentsCount() -> Int {
+        return comments?.count ?? 0
+    }
+    
+    func getCommentCellFor(index: Int) -> PostDetails.Models.CommentCellModel {
+        
+        guard let comment = comments?.getElement(index) else { return PostDetails.Models.CommentCellModel() }
+        
+        return PostDetails.Models.CommentCellModel(comment: comment)
+    }
+    
+    fileprivate func getComments() {
+        
+        guard let post = selectedPost else { return }
+        
+        presenter?.displayLoading(true)
+        
+        let deadlineTime = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: deadlineTime) { [weak self] in
+            
+            self?.worker?.getComments(for: post, completion: { (comments, error) in
+                
+                self?.presenter?.displayLoading(false)
+                self?.comments = comments
+                self?.presenter?.presentComments()
+            })
+        }
     }
 }

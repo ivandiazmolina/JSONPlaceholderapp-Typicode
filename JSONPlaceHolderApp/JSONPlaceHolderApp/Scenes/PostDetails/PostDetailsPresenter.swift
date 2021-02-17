@@ -14,6 +14,8 @@ import UIKit
 
 protocol PostDetailsPresentationLogic {
     func setupView(response: PostDetails.SetupView.Response)
+    func displayLoading(_ show: Bool)
+    func presentComments()
 }
 
 class PostDetailsPresenter: PostDetailsPresentationLogic {
@@ -30,5 +32,13 @@ class PostDetailsPresenter: PostDetailsPresentationLogic {
         let modelView = PostDetails.SetupView.ViewModel(navigationTitle: postID, title: post?.title, body: post?.body, userName: userNameLabel)
         
         viewController?.setupView(viewModel: modelView)
+    }
+    
+    func displayLoading(_ show: Bool) {
+        viewController?.showLoading(show)
+    }
+    
+    func presentComments() {
+        viewController?.displayComments()
     }
 }

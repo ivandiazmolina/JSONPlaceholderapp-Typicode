@@ -29,4 +29,10 @@ enum PostDetails {
             var userName: String?
         }
     }
+    
+    enum Models {
+        struct CommentCellModel {
+            var comment: Comment?
+        }
+    }
 }

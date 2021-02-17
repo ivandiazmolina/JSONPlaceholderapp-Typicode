@@ -14,9 +14,11 @@ import UIKit
 
 protocol PostDetailsDisplayLogic: class {
     func setupView(viewModel: PostDetails.SetupView.ViewModel)
+    func showLoading(_ show: Bool)
+    func displayComments()
 }
 
-class PostDetailsViewController: UIViewController, PostDetailsDisplayLogic {
+class PostDetailsViewController: BaseViewController, PostDetailsDisplayLogic {
     
     var interactor: PostDetailsBusinessLogic?
     var router: (NSObjectProtocol & PostDetailsRoutingLogic & PostDetailsDataPassing)?
@@ -26,6 +28,14 @@ class PostDetailsViewController: UIViewController, PostDetailsDisplayLogic {
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var commentsCollectionView: UICollectionView!
+    
+    // LETS AND VARS
+    let CELL_MARGIN = CGFloat(8)
+    let CELL_HEIGHT = CGFloat(300)
+    let CELL_PERCENT = CGFloat(0.8)
+
+    var itemWidth = CGFloat(0)
     
     // MARK: Object lifecycle
     
@@ -97,5 +107,77 @@ class PostDetailsViewController: UIViewController, PostDetailsDisplayLogic {
         commentLabel.text = "postDetails.comments.title".localized
         commentLabel.font = .boldSystemFont(ofSize: 18)
         
+        // CollectionView
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) // separacion externa collectionview
+        layout.minimumLineSpacing = CELL_MARGIN // separacion interna entre items
+        layout.minimumInteritemSpacing = CELL_MARGIN
+        layout.scrollDirection = .horizontal
+        
+        commentsCollectionView.collectionViewLayout = layout
+        
+        commentsCollectionView.register(CommentCollectionViewCell.self)
+        
+        commentsCollectionView.delegate = self
+        commentsCollectionView.dataSource = self
+        commentsCollectionView.isPagingEnabled = false
+        commentsCollectionView.isDirectionalLockEnabled = false
+    }
+    
+    func showLoading(_ show: Bool) {
+        displayLoading(show)
+    }
+    
+    func displayComments() {
+        reloadData(collectionView: commentsCollectionView)
+    }
+}
+
+// MARK: UICollectionViewDelegate and UICollectionViewDataSource
+
+extension PostDetailsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return interactor?.getCommentsCount() ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CommentCollectionViewCell.cellIdentifier, for: indexPath) as? CommentCollectionViewCell else {
+            print("Error to cast UICollectionViewCell to CommentCollectionViewCell")
+            return UICollectionViewCell()
+        }
+                
+        guard let data = interactor?.getCommentCellFor(index: indexPath.row) else {
+            print("Error to get CommentCollectionViewCell from index")
+            return UICollectionViewCell()
+        }
+        
+        cell.updateUI(model: data)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        itemWidth =  (commentsCollectionView.bounds.width - CELL_MARGIN) * CELL_PERCENT
+        
+        return CGSize(width: itemWidth, height: commentsCollectionView.bounds.height * 0.9)
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        setPosition(scrollView: scrollView)
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        setPosition(scrollView: scrollView)
+    }
+    
+    func setPosition(scrollView: UIScrollView) {
+        
+        let pageNumber = Int(ceil(scrollView.contentOffset.x + (commentsCollectionView.bounds.width / 2)) / (itemWidth + CELL_MARGIN))
+
+        let indexPath = IndexPath(row: pageNumber, section: 0)
+        commentsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
 }

@@ -55,6 +55,10 @@ class MainWorker {
         }
     }
     
+    func selectPost(post: Post) {
+        PostsManager.shared.setPostSelected(post: post)
+    }
+    
     fileprivate func findUserBy(users: [User]?, userId: Int) -> User? {
         return users?.first(where: {$0.id == userId})
     }

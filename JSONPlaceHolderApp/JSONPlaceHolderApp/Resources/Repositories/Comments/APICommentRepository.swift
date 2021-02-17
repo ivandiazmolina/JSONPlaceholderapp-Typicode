@@ -14,7 +14,7 @@ class APICommentRepository: APIBaseRepository, CommentRepositoryProtocol {
     func getComments(for post: Post, completion: @escaping ([Comment]) -> Void) {
         
         // 1. try to init the URL
-        guard let url = APIBaseRepository.createURL(endPoint: .users) else {
+        guard let url = APIBaseRepository.createURL(endPoint: .comments(postId: post.id ?? 0)) else {
             completion([])
             return
         }

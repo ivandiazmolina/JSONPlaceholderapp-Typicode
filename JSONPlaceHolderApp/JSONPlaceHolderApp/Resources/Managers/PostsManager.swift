@@ -12,7 +12,8 @@ class PostsManager {
     
     static let shared = PostsManager()
     
-    private var posts: [Post] = []
+    var posts: [Post] = []
+    private var postSelected: Post?
     
     func setPosts(_ posts: [Post]) {
         self.posts = posts
@@ -20,5 +21,13 @@ class PostsManager {
     
     func getPosts() -> [Post] {
         return posts
+    }
+    
+    func setPostSelected(post: Post) {
+        postSelected = post
+    }
+    
+    func getPostSelected() -> Post? {
+        return postSelected
     }
 }

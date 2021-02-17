@@ -20,7 +20,7 @@ enum APIEndpoint {
         case .users:
             return "/users"
         case .comments(let postId):
-            return "/comments/?\(postId)"
+            return "/comments?postId=\(postId)"
         }
     }
 }

@@ -46,9 +46,14 @@ class MainInteractor: MainBusinessLogic, MainDataStore {
     }
     
     func didSelectedItemAt(index: Int) {
+        
         guard let post = posts?.getElement(index) else { return }
         
         selectedPost = post
+        
+        
+        worker?.selectPost(post: post)
+        
         
         let response = Main.DidSelectedItem.Response(post: selectedPost)
         
@@ -73,9 +78,7 @@ class MainInteractor: MainBusinessLogic, MainDataStore {
         DispatchQueue.main.asyncAfter(deadline: deadlineTime) { [weak self] in
             
             self?.worker?.getPosts(completion: { (posts, error) in
-                
-                self?.presenter?.displayLoading(true)
-                
+                                
                 self?.posts = posts
                 
                 self?.presenter?.displayLoading(false)

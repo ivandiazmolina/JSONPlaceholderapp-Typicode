@@ -13,6 +13,16 @@
 import UIKit
 
 class PostDetailsWorker {
-    func doSomeWork() {
+    
+    func getComments(for post: Post, completion: @escaping([Comment]?, String?) -> Void) {
+        
+        // LETS and VARS
+        let commentsRepository = CommentRepository()
+        
+        // Get Comments
+        commentsRepository.getComments(for: post) { (comments) in
+            
+            completion(comments, nil)
+        }
     }
 }
