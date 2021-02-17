@@ -33,17 +33,17 @@ class MainRouter: NSObject, MainRoutingLogic, MainDataPassing {
         
         if let segue = segue, let destinationVC = segue.destination as? PostDetailsViewController {
             var destinationDS = destinationVC.router?.dataStore
-            passDataToCharacters(source: dataStore, destination: &destinationDS)
+            passDataToPostDetails(source: dataStore, destination: &destinationDS)
         } else if let destinationVC = storyboard.instantiateInitialViewController() as? PostDetailsViewController {
             var destinationDS = destinationVC.router?.dataStore
-            passDataToCharacters(source: dataStore, destination: &destinationDS)
-            navigateToComments(source: viewController!, destination: destinationVC)
+            passDataToPostDetails(source: dataStore, destination: &destinationDS)
+            navigateToPostDetails(source: viewController!, destination: destinationVC)
         }
     }
     
     // MARK: Navigation
     
-    fileprivate func navigateToComments(source: MainViewController, destination: PostDetailsViewController) {
+    fileprivate func navigateToPostDetails(source: MainViewController, destination: PostDetailsViewController) {
         ui {
             source.navigationController?.pushViewController(destination, animated: true)
         }
@@ -51,7 +51,7 @@ class MainRouter: NSObject, MainRoutingLogic, MainDataPassing {
     
     // MARK: Passing data
     
-    fileprivate func passDataToCharacters(source: MainDataStore?, destination: inout PostDetailsDataStore?) {
+    fileprivate func passDataToPostDetails(source: MainDataStore?, destination: inout PostDetailsDataStore?) {
         destination?.selectedPost = source?.selectedPost
     }
 }

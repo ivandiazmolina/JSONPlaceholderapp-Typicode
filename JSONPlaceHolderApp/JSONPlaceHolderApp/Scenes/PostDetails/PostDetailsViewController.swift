@@ -173,7 +173,7 @@ extension PostDetailsViewController: UICollectionViewDelegate, UICollectionViewD
         setPosition(scrollView: scrollView)
     }
     
-    func setPosition(scrollView: UIScrollView) {
+    private func setPosition(scrollView: UIScrollView) {
         
         let pageNumber = Int(ceil(scrollView.contentOffset.x + (commentsCollectionView.bounds.width / 2)) / (itemWidth + CELL_MARGIN))
 

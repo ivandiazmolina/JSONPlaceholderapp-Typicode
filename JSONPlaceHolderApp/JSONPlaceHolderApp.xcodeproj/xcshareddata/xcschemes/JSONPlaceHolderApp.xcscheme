@@ -26,7 +26,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2CD0CDA525DADDC900FCE33F"
+            BuildableName = "JSONPlaceHolderApp.app"
+            BlueprintName = "JSONPlaceHolderApp"
+            ReferencedContainer = "container:JSONPlaceHolderApp.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,16 +46,6 @@
                BlueprintIdentifier = "2CD0CDBB25DADDCA00FCE33F"
                BuildableName = "JSONPlaceHolderAppTests.xctest"
                BlueprintName = "JSONPlaceHolderAppTests"
-               ReferencedContainer = "container:JSONPlaceHolderApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2CD0CDC625DADDCA00FCE33F"
-               BuildableName = "JSONPlaceHolderAppUITests.xctest"
-               BlueprintName = "JSONPlaceHolderAppUITests"
                ReferencedContainer = "container:JSONPlaceHolderApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
