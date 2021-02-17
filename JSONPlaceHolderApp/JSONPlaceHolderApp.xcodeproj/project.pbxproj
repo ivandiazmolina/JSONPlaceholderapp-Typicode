@@ -26,7 +26,6 @@
 		2CD0CDB325DADDCA00FCE33F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0CDB225DADDCA00FCE33F /* Assets.xcassets */; };
 		2CD0CDB625DADDCA00FCE33F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0CDB425DADDCA00FCE33F /* LaunchScreen.storyboard */; };
 		2CD0CDC125DADDCA00FCE33F /* JSONPlaceHolderAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0CDC025DADDCA00FCE33F /* JSONPlaceHolderAppTests.swift */; };
-		2CD0CDCC25DADDCA00FCE33F /* JSONPlaceHolderAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0CDCB25DADDCA00FCE33F /* JSONPlaceHolderAppUITests.swift */; };
 		2CD0CE0325DAE6E400FCE33F /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0CDFD25DAE6E400FCE33F /* MainPresenter.swift */; };
 		2CD0CE0425DAE6E400FCE33F /* MainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0CDFE25DAE6E400FCE33F /* MainWorker.swift */; };
 		2CD0CE0525DAE6E400FCE33F /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0CDFF25DAE6E400FCE33F /* MainRouter.swift */; };
@@ -59,13 +58,6 @@
 			remoteGlobalIDString = 2CD0CDA525DADDC900FCE33F;
 			remoteInfo = JSONPlaceHolderApp;
 		};
-		2CD0CDC825DADDCA00FCE33F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2CD0CD9E25DADDC900FCE33F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2CD0CDA525DADDC900FCE33F;
-			remoteInfo = JSONPlaceHolderApp;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -91,9 +83,6 @@
 		2CD0CDBC25DADDCA00FCE33F /* JSONPlaceHolderAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONPlaceHolderAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD0CDC025DADDCA00FCE33F /* JSONPlaceHolderAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPlaceHolderAppTests.swift; sourceTree = "<group>"; };
 		2CD0CDC225DADDCA00FCE33F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CD0CDC725DADDCA00FCE33F /* JSONPlaceHolderAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONPlaceHolderAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CD0CDCB25DADDCA00FCE33F /* JSONPlaceHolderAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONPlaceHolderAppUITests.swift; sourceTree = "<group>"; };
-		2CD0CDCD25DADDCA00FCE33F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CD0CDFD25DAE6E400FCE33F /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		2CD0CDFE25DAE6E400FCE33F /* MainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWorker.swift; sourceTree = "<group>"; };
 		2CD0CDFF25DAE6E400FCE33F /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
@@ -140,13 +129,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2CD0CDC425DADDCA00FCE33F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -188,7 +170,6 @@
 			children = (
 				2CD0CDA825DADDC900FCE33F /* JSONPlaceHolderApp */,
 				2CD0CDBF25DADDCA00FCE33F /* JSONPlaceHolderAppTests */,
-				2CD0CDCA25DADDCA00FCE33F /* JSONPlaceHolderAppUITests */,
 				2CD0CDA725DADDC900FCE33F /* Products */,
 				C2BDFF1491F0D3AE1896B352 /* Pods */,
 				80250912A72BA5656CC7B936 /* Frameworks */,
@@ -200,7 +181,6 @@
 			children = (
 				2CD0CDA625DADDC900FCE33F /* JSONPlaceHolderApp.app */,
 				2CD0CDBC25DADDCA00FCE33F /* JSONPlaceHolderAppTests.xctest */,
-				2CD0CDC725DADDCA00FCE33F /* JSONPlaceHolderAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,15 +206,6 @@
 				2CD0CDC225DADDCA00FCE33F /* Info.plist */,
 			);
 			path = JSONPlaceHolderAppTests;
-			sourceTree = "<group>";
-		};
-		2CD0CDCA25DADDCA00FCE33F /* JSONPlaceHolderAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2CD0CDCB25DADDCA00FCE33F /* JSONPlaceHolderAppUITests.swift */,
-				2CD0CDCD25DADDCA00FCE33F /* Info.plist */,
-			);
-			path = JSONPlaceHolderAppUITests;
 			sourceTree = "<group>";
 		};
 		2CD0CE0C25DAE6E900FCE33F /* Scenes */ = {
@@ -410,24 +381,6 @@
 			productReference = 2CD0CDBC25DADDCA00FCE33F /* JSONPlaceHolderAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2CD0CDC625DADDCA00FCE33F /* JSONPlaceHolderAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2CD0CDD625DADDCA00FCE33F /* Build configuration list for PBXNativeTarget "JSONPlaceHolderAppUITests" */;
-			buildPhases = (
-				2CD0CDC325DADDCA00FCE33F /* Sources */,
-				2CD0CDC425DADDCA00FCE33F /* Frameworks */,
-				2CD0CDC525DADDCA00FCE33F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2CD0CDC925DADDCA00FCE33F /* PBXTargetDependency */,
-			);
-			name = JSONPlaceHolderAppUITests;
-			productName = JSONPlaceHolderAppUITests;
-			productReference = 2CD0CDC725DADDCA00FCE33F /* JSONPlaceHolderAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -442,10 +395,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					2CD0CDBB25DADDCA00FCE33F = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 2CD0CDA525DADDC900FCE33F;
-					};
-					2CD0CDC625DADDCA00FCE33F = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 2CD0CDA525DADDC900FCE33F;
 					};
@@ -466,7 +415,6 @@
 			targets = (
 				2CD0CDA525DADDC900FCE33F /* JSONPlaceHolderApp */,
 				2CD0CDBB25DADDCA00FCE33F /* JSONPlaceHolderAppTests */,
-				2CD0CDC625DADDCA00FCE33F /* JSONPlaceHolderAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -487,13 +435,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2CD0CDBA25DADDCA00FCE33F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2CD0CDC525DADDCA00FCE33F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -630,14 +571,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2CD0CDC325DADDCA00FCE33F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2CD0CDCC25DADDCA00FCE33F /* JSONPlaceHolderAppUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -645,11 +578,6 @@
 			isa = PBXTargetDependency;
 			target = 2CD0CDA525DADDC900FCE33F /* JSONPlaceHolderApp */;
 			targetProxy = 2CD0CDBD25DADDCA00FCE33F /* PBXContainerItemProxy */;
-		};
-		2CD0CDC925DADDCA00FCE33F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2CD0CDA525DADDC900FCE33F /* JSONPlaceHolderApp */;
-			targetProxy = 2CD0CDC825DADDCA00FCE33F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -867,46 +795,6 @@
 			};
 			name = Release;
 		};
-		2CD0CDD725DADDCA00FCE33F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69P53KQ6SY;
-				INFOPLIST_FILE = JSONPlaceHolderAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = IDIAZM.JSONPlaceHolderAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = JSONPlaceHolderApp;
-			};
-			name = Debug;
-		};
-		2CD0CDD825DADDCA00FCE33F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 69P53KQ6SY;
-				INFOPLIST_FILE = JSONPlaceHolderAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = IDIAZM.JSONPlaceHolderAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = JSONPlaceHolderApp;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -933,15 +821,6 @@
 			buildConfigurations = (
 				2CD0CDD425DADDCA00FCE33F /* Debug */,
 				2CD0CDD525DADDCA00FCE33F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2CD0CDD625DADDCA00FCE33F /* Build configuration list for PBXNativeTarget "JSONPlaceHolderAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2CD0CDD725DADDCA00FCE33F /* Debug */,
-				2CD0CDD825DADDCA00FCE33F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
