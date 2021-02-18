@@ -12,6 +12,8 @@
 		2C46E61B25DD9ABB0067CB5D /* PostDetailsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C46E61725DD9ABB0067CB5D /* PostDetailsInteractorTests.swift */; };
 		2C46E61C25DD9ABB0067CB5D /* PostDetailsWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C46E61825DD9ABB0067CB5D /* PostDetailsWorkerTests.swift */; };
 		2C46E61D25DD9ABB0067CB5D /* PostDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C46E61925DD9ABB0067CB5D /* PostDetailsPresenterTests.swift */; };
+		2C46E62325DDA1700067CB5D /* CachePostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C46E62225DDA1700067CB5D /* CachePostRepository.swift */; };
+		2C46E62825DDA1FC0067CB5D /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C46E62725DDA1FC0067CB5D /* Cache.swift */; };
 		2C4D2AA025DC7923007D499F /* LocalPostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D2A9F25DC7923007D499F /* LocalPostRepository.swift */; };
 		2C4D2AAD25DC7AE2007D499F /* CommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D2AAB25DC7AE2007D499F /* CommentCollectionViewCell.swift */; };
 		2C4D2AAE25DC7AE2007D499F /* CommentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C4D2AAC25DC7AE2007D499F /* CommentCollectionViewCell.xib */; };
@@ -72,6 +74,8 @@
 		2C46E61725DD9ABB0067CB5D /* PostDetailsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsInteractorTests.swift; sourceTree = "<group>"; };
 		2C46E61825DD9ABB0067CB5D /* PostDetailsWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsWorkerTests.swift; sourceTree = "<group>"; };
 		2C46E61925DD9ABB0067CB5D /* PostDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsPresenterTests.swift; sourceTree = "<group>"; };
+		2C46E62225DDA1700067CB5D /* CachePostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePostRepository.swift; sourceTree = "<group>"; };
+		2C46E62725DDA1FC0067CB5D /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		2C4D2A9F25DC7923007D499F /* LocalPostRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalPostRepository.swift; sourceTree = "<group>"; };
 		2C4D2AAB25DC7AE2007D499F /* CommentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCollectionViewCell.swift; sourceTree = "<group>"; };
 		2C4D2AAC25DC7AE2007D499F /* CommentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -155,6 +159,14 @@
 				2C46E61925DD9ABB0067CB5D /* PostDetailsPresenterTests.swift */,
 			);
 			path = PostDetails;
+			sourceTree = "<group>";
+		};
+		2C46E62625DDA1DD0067CB5D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2C46E62725DDA1FC0067CB5D /* Cache.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		2C4D2AAA25DC7AC7007D499F /* View */ = {
@@ -281,6 +293,7 @@
 		2CD0CE2125DAEA3000FCE33F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C46E62625DDA1DD0067CB5D /* Utils */,
 				2CFA5ECF25DAF4240009C915 /* Managers */,
 				2CFA5EB625DAEFD60009C915 /* Repositories */,
 				2CFA5EA225DAECD80009C915 /* Networking */,
@@ -333,6 +346,7 @@
 				2CFA5EBD25DAF0BB0009C915 /* PostRepository.swift */,
 				2CFA5EC525DAF0F00009C915 /* APIPostRepository.swift */,
 				2C4D2A9F25DC7923007D499F /* LocalPostRepository.swift */,
+				2C46E62225DDA1700067CB5D /* CachePostRepository.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -578,6 +592,7 @@
 				2CD0CE0525DAE6E400FCE33F /* MainRouter.swift in Sources */,
 				2CFA5ED825DB1FC30009C915 /* PostTableViewCell.swift in Sources */,
 				2C85CFB725DB39F9008D4F0C /* PostDetailsWorker.swift in Sources */,
+				2C46E62825DDA1FC0067CB5D /* Cache.swift in Sources */,
 				2C85CFBA25DB39F9008D4F0C /* PostDetailsViewController.swift in Sources */,
 				2CD0CDAA25DADDC900FCE33F /* AppDelegate.swift in Sources */,
 				2C85CFA825DB36B7008D4F0C /* CommentRepository.swift in Sources */,
@@ -588,6 +603,7 @@
 				2C85CFB625DB39F9008D4F0C /* PostDetailsPresenter.swift in Sources */,
 				2C85CFB925DB39F9008D4F0C /* PostDetailsModels.swift in Sources */,
 				2CD0CE0325DAE6E400FCE33F /* MainPresenter.swift in Sources */,
+				2C46E62325DDA1700067CB5D /* CachePostRepository.swift in Sources */,
 				2C4D2AA025DC7923007D499F /* LocalPostRepository.swift in Sources */,
 				2CFA5EB925DAF0220009C915 /* APIBaseRepository.swift in Sources */,
 				2CD0CE1A25DAE81A00FCE33F /* BaseViewController.swift in Sources */,

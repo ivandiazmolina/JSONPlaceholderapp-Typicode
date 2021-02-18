@@ -31,7 +31,7 @@ class PostTableViewCell: UITableViewCell {
         
         // Post
         postLabel.text = post?.title
-        postLabel.textColor = .black
+        postLabel.textColor = .white
         postLabel.font = .boldSystemFont(ofSize: 16)
         
         // User

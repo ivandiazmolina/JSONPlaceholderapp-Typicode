@@ -51,6 +51,20 @@ class MainWorker {
                 }
             }
             
+            
+            var dicArray: [String] = []
+            
+            for tmp in mPosts ?? [] {
+                
+                if let res = tmp.toJSON() {
+                    dicArray.append(res)
+                }
+            }
+                                
+            if let data = try? JSONSerialization.data(withJSONObject: dicArray, options: .prettyPrinted) {
+                Cache.shared.savePosts(data: data, key: "posts")
+            }
+            
             completion(mPosts, nil)
         }
     }

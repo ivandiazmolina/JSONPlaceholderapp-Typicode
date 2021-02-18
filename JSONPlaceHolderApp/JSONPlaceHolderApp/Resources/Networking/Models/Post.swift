@@ -42,4 +42,12 @@ struct Post: Codable {
     mutating func setComments(comments: [Comment]) {
         self.comments = comments
     }
+    
+    func toJSON() -> String? {
+        let jsonData = try! JSONEncoder().encode(self)
+        let jsonString = String(data: jsonData, encoding: .utf8)!
+        print(jsonString)
+        
+        return jsonString
+    }
 }

@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,21 +12,21 @@
             <objects>
                 <viewController id="oOq-pc-0jg" customClass="MainViewController" customModule="JSONPlaceHolderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SwP-5f-9YY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufD-3W-tzd" customClass="IntrinsicHeightTableView" customModule="IDIAZM">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="16" y="0.0" width="382" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mBd-sH-vg4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mBd-sH-vg4" firstAttribute="bottom" secondItem="ufD-3W-tzd" secondAttribute="bottom" id="3fY-LN-gPM"/>
-                            <constraint firstItem="ufD-3W-tzd" firstAttribute="leading" secondItem="mBd-sH-vg4" secondAttribute="leading" id="61N-xn-yzn"/>
+                            <constraint firstItem="ufD-3W-tzd" firstAttribute="leading" secondItem="mBd-sH-vg4" secondAttribute="leading" constant="16" id="61N-xn-yzn"/>
                             <constraint firstItem="ufD-3W-tzd" firstAttribute="top" secondItem="mBd-sH-vg4" secondAttribute="top" id="7XR-QS-CfC"/>
-                            <constraint firstItem="mBd-sH-vg4" firstAttribute="trailing" secondItem="ufD-3W-tzd" secondAttribute="trailing" id="DZj-6K-Wmn"/>
+                            <constraint firstItem="mBd-sH-vg4" firstAttribute="trailing" secondItem="ufD-3W-tzd" secondAttribute="trailing" constant="16" id="DZj-6K-Wmn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SG7-50-DiH"/>
@@ -44,9 +43,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kV5-Vo-Yus" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aTy-u0-C8K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="aTy-u0-C8K">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -58,9 +62,4 @@
             <point key="canvasLocation" x="-310.14492753623193" y="13.392857142857142"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

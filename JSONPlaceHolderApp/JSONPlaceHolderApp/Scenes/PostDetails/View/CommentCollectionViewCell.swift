@@ -22,7 +22,7 @@ class CommentCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = .white
+        backgroundColor = .black
         viewCell.layer.cornerRadius = 20.0
         viewCell.layer.borderWidth = 1.0
         viewCell.layer.borderColor = UIColor.gray.cgColor
