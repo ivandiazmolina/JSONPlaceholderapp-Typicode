@@ -45,6 +45,8 @@ class MainInteractor: MainBusinessLogic, MainDataStore {
         getInitialData()
     }
     
+    /// method selects a post from specific index
+    /// - Parameter index: index
     func didSelectedItemAt(index: Int) {
         
         guard let post = posts?.getElement(index) else { return }
@@ -60,16 +62,22 @@ class MainInteractor: MainBusinessLogic, MainDataStore {
         presenter?.presentPostDetails(response: response)
     }
     
+    /// return the posts count
+    /// - Returns: count
     func getPostsCount() -> Int {
         return posts?.count ?? 0
     }
     
+    /// method returns the cellModel for current index
+    /// - Parameter index: index
+    /// - Returns: cell model
     func getPostCellFor(index: Int) -> Main.Models.PostCellModel {
         guard let post = posts?.getElement(index) else { return Main.Models.PostCellModel() }
         
         return Main.Models.PostCellModel(post: post)
     }
     
+    /// method fetchs the initial data for the app
     fileprivate func getInitialData() {
         
         presenter?.displayLoading(true)

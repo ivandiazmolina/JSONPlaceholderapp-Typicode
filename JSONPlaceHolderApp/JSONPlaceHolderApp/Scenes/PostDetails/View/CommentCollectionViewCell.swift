@@ -33,6 +33,8 @@ class CommentCollectionViewCell: UICollectionViewCell {
         
     }
     
+    /// method updates the UI of cell
+    /// - Parameter model: model
     func updateUI(model: PostDetails.Models.CommentCellModel) {
         name.text = model.comment?.email
         name.numberOfLines = 1

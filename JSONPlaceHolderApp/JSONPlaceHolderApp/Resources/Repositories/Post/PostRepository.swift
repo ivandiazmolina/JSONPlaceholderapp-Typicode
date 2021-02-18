@@ -23,30 +23,33 @@ class PostRepository {
     func getPosts(completion: @escaping ([Post]) -> Void) {
         
         
+        // 1. try to get posts from Cache
         cacheRepository.getPosts { [weak self] (posts) in
             
-            // 2. return the local posts if it is not empty
+            // 2. return the cache posts if it is not empty
             if !posts.isEmpty {
                 completion(posts)
+                return
             }
             
-            // 1. try to get the local posts
+            // 3. try to get the local posts
             self?.localRepository.getPosts { [weak self] (posts) in
                 
-                // 2. return the local posts if it is not empty
+                // 4. return the local posts if it is not empty
                 if !posts.isEmpty {
                     completion(posts)
+                    return
                 }
                 
-                // 3. try to get the remote posts
+                // 5. try to get the remote posts
                 self?.apiRepository.getPosts { (posts) in
                     
-                    // 4. if it is not empty, save it in local
+                    // 6. if it is not empty, save it in local
                     if !posts.isEmpty {
                         PostsManager.shared.setPosts(posts)
                     }
                                         
-                    // 5. return the posts
+                    // 7. return the posts
                     completion(posts)
                 }
             }

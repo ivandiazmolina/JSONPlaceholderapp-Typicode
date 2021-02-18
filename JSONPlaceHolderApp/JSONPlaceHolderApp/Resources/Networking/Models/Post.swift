@@ -35,14 +35,14 @@ struct Post: Codable {
         try self.init(data)
     }
     
+    /// return the userID
+    /// - Returns: userid
     func getUserId() -> Int {
         return userId ?? -1
     }
     
-    mutating func setComments(comments: [Comment]) {
-        self.comments = comments
-    }
-    
+    /// method converts the current object to json string
+    /// - Returns: string with JSON format
     func toJSON() -> String? {
         let jsonData = try! JSONEncoder().encode(self)
         let jsonString = String(data: jsonData, encoding: .utf8)!

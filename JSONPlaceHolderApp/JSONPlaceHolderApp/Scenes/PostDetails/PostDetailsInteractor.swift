@@ -43,10 +43,15 @@ class PostDetailsInteractor: PostDetailsBusinessLogic, PostDetailsDataStore {
         getComments()
     }
     
+    /// return the comments count
+    /// - Returns: count
     func getCommentsCount() -> Int {
         return comments?.count ?? 0
     }
     
+    /// method returns the cellModel for current index
+    /// - Parameter index: index
+    /// - Returns: cell model
     func getCommentCellFor(index: Int) -> PostDetails.Models.CommentCellModel {
         
         guard let comment = comments?.getElement(index) else { return PostDetails.Models.CommentCellModel() }
@@ -54,6 +59,7 @@ class PostDetailsInteractor: PostDetailsBusinessLogic, PostDetailsDataStore {
         return PostDetails.Models.CommentCellModel(comment: comment)
     }
     
+    /// method downloads the comments of selected post
     fileprivate func getComments() {
         
         guard let post = selectedPost else { return }

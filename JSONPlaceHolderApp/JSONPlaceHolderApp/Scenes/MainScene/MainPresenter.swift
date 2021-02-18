@@ -31,14 +31,19 @@ class MainPresenter: MainPresentationLogic {
         viewController?.setupView(viewModel: viewModel)
     }
     
+    /// method shows loading in screen
+    /// - Parameter show: flag to show loading
     func displayLoading(_ show: Bool) {
         viewController?.showLoading(show)
     }
     
+    /// method shows posts in screen
     func presentPosts() {
         viewController?.displayPosts()
     }
     
+    /// method navigates to details of selected post
+    /// - Parameter response: response
     func presentPostDetails(response: Main.DidSelectedItem.Response) {
         // 1. create viewModel
         let viewModel = Main.DidSelectedItem.ViewModel()

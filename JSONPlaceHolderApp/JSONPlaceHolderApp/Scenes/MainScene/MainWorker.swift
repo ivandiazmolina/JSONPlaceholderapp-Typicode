@@ -62,17 +62,24 @@ class MainWorker {
             }
                                 
             if let data = try? JSONSerialization.data(withJSONObject: dicArray, options: .prettyPrinted) {
-                Cache.shared.savePosts(data: data, key: "posts")
+                Cache.shared.savePosts(data: data)
             }
             
             completion(mPosts, nil)
         }
     }
     
+    /// method selects the selected post
+    /// - Parameter post: selected post
     func selectPost(post: Post) {
         PostsManager.shared.setPostSelected(post: post)
     }
     
+    /// method finds an user in array from userId
+    /// - Parameters:
+    ///   - users: array of users
+    ///   - userId: userID what we want to find
+    /// - Returns: user
     fileprivate func findUserBy(users: [User]?, userId: Int) -> User? {
         return users?.first(where: {$0.id == userId})
     }

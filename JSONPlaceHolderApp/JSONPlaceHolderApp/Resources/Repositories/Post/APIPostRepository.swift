@@ -12,6 +12,7 @@ import IDIAZM
 class APIPostRepository: APIBaseRepository, PostRepositoryProtocol {
     
     func getPosts(completion: @escaping ([Post]) -> Void) {
+        
         // 1. try to init the URL
         guard let url = APIBaseRepository.createURL(endPoint: .posts) else {
             completion([])

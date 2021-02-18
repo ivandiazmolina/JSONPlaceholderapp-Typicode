@@ -34,10 +34,13 @@ class PostDetailsPresenter: PostDetailsPresentationLogic {
         viewController?.setupView(viewModel: modelView)
     }
     
+    /// method shows loading in screen
+    /// - Parameter show: flag to show loading
     func displayLoading(_ show: Bool) {
         viewController?.showLoading(show)
     }
     
+    /// method shows comments in screen
     func presentComments() {
         viewController?.displayComments()
     }

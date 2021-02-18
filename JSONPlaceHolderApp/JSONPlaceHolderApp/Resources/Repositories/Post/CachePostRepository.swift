@@ -11,7 +11,6 @@ import Foundation
 class CachePostRepository: PostRepositoryProtocol {
     
     func getPosts(completion: @escaping ([Post]) -> Void) {
-        Cache.shared.readPosts(key: "posts")
-        completion([])
+        completion(Cache.shared.readPosts())
     }
 }

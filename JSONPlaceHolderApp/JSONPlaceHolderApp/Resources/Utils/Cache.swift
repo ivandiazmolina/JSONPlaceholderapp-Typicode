@@ -10,35 +10,47 @@ import Foundation
 
 class Cache {
     
+    private let KEY = "posts"
+    
     static let shared = Cache()
     
-    func savePosts(data: Data, key: String) {
+    /// method saves posts in the mobile storage
+    /// - Parameters:
+    ///   - data: posts
+    ///   - key: key to save posts
+    func savePosts(data: Data) {
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         
         if let encoded = try? encoder.encode(data) {
             let defaults = UserDefaults.standard
-            defaults.set(encoded, forKey: key)
+            defaults.set(encoded, forKey: KEY)
         }
     }
     
-    func readPosts(key: String) -> [Post] {
+    /// method reads posts from mobile storage
+    /// - Parameter key: key to retrieve posts
+    /// - Returns: posts
+    func readPosts() -> [Post] {
         
         var posts: [Post] = []
         
-        if let savedPost = UserDefaults.standard.object(forKey: key) as? Data {
+        // 1. try to get data with a specific key
+        if let savedPost = UserDefaults.standard.object(forKey: KEY) as? Data {
+            
             let decoder = JSONDecoder()
             
+            // 2. try to decode data
             if let dataPosts = try? decoder.decode(Data.self, from: savedPost),
                let arrayStringPosts = try? decoder.decode([String].self, from: dataPosts) {
-                
+ 
+                // 3. convert every object in a Post
                 for tmp in arrayStringPosts {
                     do {
                         let post = try Post(tmp)
                         posts.append(post)
                     } catch {}
                 }
-                
             }
         }
         
